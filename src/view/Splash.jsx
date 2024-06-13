@@ -4,7 +4,7 @@ import { SafeAreaView, Text } from "react-native";
 export default props => {
     return(
         <SafeAreaView>
-            <Text>Splash</Text>
+            <Text>Splash1</Text>
         </SafeAreaView>
     )
 }
