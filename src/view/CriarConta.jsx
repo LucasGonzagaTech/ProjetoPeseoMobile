@@ -32,7 +32,7 @@ export default props => {
                     />
                 </View>
                 <View style={style.contentInput}>
-                    <Text style={style.labelInput}>Confirma senha * *</Text>
+                    <Text style={style.labelInput}>Confirma senha *</Text>
                     <TextInput
                         placeholder="Digite seu email"
                         style={style.input}
