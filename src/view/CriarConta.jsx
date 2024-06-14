@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, SafeAreaView, Text, Image, View, Pressable } from "react-native";
+import { StyleSheet, SafeAreaView, Text, Image, View, Pressable, StatusBar } from "react-native";
 import { TextInput } from "react-native-paper";
 
 import comonStyles from "../comonStyles";
@@ -10,10 +10,14 @@ import Icon from "react-native-vector-icons/Ionicons";
 export default props => {
     const [email, setEmail] = React.useState('');
     const [password, setPassword] = React.useState('');
+    const [confirpassword, setConfirPassword] = React.useState('');
 
     return (
         <SafeAreaView style={style.container}>
-
+            <StatusBar
+                barStyle="dark-content" // Altera o estilo do texto para claro
+                backgroundColor="#f2f2f2" // Altera a cor de fundo da barra de status
+            />
             <View style={style.image}>
                 <Image source={logo} />
             </View>
@@ -35,6 +39,7 @@ export default props => {
                     <TextInput
                         mode="outlined"
                         placeholder="Digite sua senha"
+                        secureTextEntry={true}
                         style={style.input}
                         onFocus={() => setPassword({ isActive: true, })}
                         value={password}
@@ -47,19 +52,20 @@ export default props => {
                         mode="outlined"
                         placeholder="Confirme sua senha"
                         style={style.input}
-                        onFocus={setPassword}
+                        secureTextEntry={true}
+                        onFocus={() => setPassword({ isActive: true, })}
                         value={password}
                     />
                 </View>
             </View>
 
-            <View style={{flex:2 , gap:4, alignItems:"center"}}>
+            <View style={{ flex: 2, gap: 4, alignItems: "center" }}>
                 <Pressable style={style.button}>
                     <Text style={style.buttonText}>Criar Conta</Text>
                 </Pressable>
                 <Text> ou entre </Text>
                 <Pressable style={style.buttonGoogle}>
-                    <Icon name="logo-google" size={18} color="#5A19FF"/>
+                    <Icon name="logo-google" size={18} color="#5A19FF" />
                     <Text style={style.buttonTextGoogle}>Google</Text>
                 </Pressable>
                 <Text> Já tem conta? Entrar </Text>
@@ -76,12 +82,13 @@ const style = StyleSheet.create(
             padding: 16,
         },
 
-        image:{
-            alignItems:"center"
+        image: {
+            marginTop:42,
+            alignItems: "center"
         },
 
         content: {
-            flex: 7,
+            flex: 5,
             justifyContent: "flex-start",
             alignItems: "center",
             gap: 24
@@ -103,40 +110,40 @@ const style = StyleSheet.create(
             fontFamily: comonStyles.fontFamily,
         },
 
-        button:{
+        button: {
             width: '100%',
-            borderRadius:8,
+            borderRadius: 8,
             paddingTop: 16,
             paddingBottom: 16,
-            justifyContent:"center",
-            alignItems:"center",
+            justifyContent: "center",
+            alignItems: "center",
             backgroundColor: comonStyles.colors.primary,
         },
 
-        buttonGoogle:{
+        buttonGoogle: {
             gap: 8,
-            flexDirection:"row",
+            flexDirection: "row",
             width: '100%',
-            borderRadius:8,
+            borderRadius: 8,
             paddingTop: 16,
             paddingBottom: 16,
-            justifyContent:"center",
-            alignItems:"center",
+            justifyContent: "center",
+            alignItems: "center",
             borderColor: comonStyles.colors.primary,
-            borderWidth:1
+            borderWidth: 1
         },
 
-        buttonText:{
+        buttonText: {
             fontSize: 14,
-            fontWeight:'700',
-            color:'#FFF'
+            fontWeight: '700',
+            color: '#FFF'
         },
 
-        buttonTextGoogle:{
+        buttonTextGoogle: {
             fontSize: 14,
-            fontWeight:'700',
-            color:'#5A19FF'
+            fontWeight: '700',
+            color: '#5A19FF'
         },
-        
+
     }
 )
