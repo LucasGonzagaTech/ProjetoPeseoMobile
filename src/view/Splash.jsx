@@ -16,7 +16,7 @@ export default props => {
 
                 <View style={Style.btn}>
                     <Pressable onPress={() => props.navigation.navigate('InicialLogin')} >
-                        <Text style={Style.txt}>Continua</Text>
+                        <Text style={Style.txt}>Continuar</Text>
                     </Pressable>
                 </View>
 
@@ -45,15 +45,14 @@ const Style = StyleSheet.create(
         },
         btn: {
             backgroundColor: comonStyles.colors.primary,
-            padding: 5,
-            width: 270,
-            padding: 10,
+            padding: 13,
+            width: 350,
             borderRadius: 8
         },
         txt: {
             color: 'white',
-            marginLeft: 82,
-            fontSize: 18
+            marginLeft: 125,
+            fontSize: 18,
         }
     }
 )
