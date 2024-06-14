@@ -16,7 +16,7 @@ export default props => {
 
                 <View style={Style.btn}>
                     <Pressable onPress={() => props.navigation.navigate('InicialLogin')} >
-                        <Text style={Style.txt}>Continuar </Text>
+                        <Text style={Style.txt}>Continua</Text>
                     </Pressable>
                 </View>
 
