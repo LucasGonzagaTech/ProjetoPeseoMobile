@@ -1,10 +1,11 @@
 import React from "react";
-import { SafeAreaView, Text } from "react-native";
+import { SafeAreaView, Text, ImageBackground } from "react-native";
+import Splash from '../../assets/imgs/spalsh.png';
 
 export default props => {
     return(
         <SafeAreaView>
-            <Text>Splash</Text>
+
         </SafeAreaView>
     )
 }
