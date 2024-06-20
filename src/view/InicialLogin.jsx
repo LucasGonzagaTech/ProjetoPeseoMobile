@@ -54,12 +54,12 @@ const Style = StyleSheet.create(
         },
         text: {
             color: comonStyles.colors.primary,
-            fontSize: 40,
+            fontSize: 33,
             fontFamily: comonStyles.fontFamily
 
         },
         margintxt: {
-            padding: 100,
+            padding: 90,
         },
         botao:{
            backgroundColor:'none',
