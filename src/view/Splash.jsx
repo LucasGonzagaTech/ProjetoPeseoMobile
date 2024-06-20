@@ -2,8 +2,6 @@ import React from "react";
 import { SafeAreaView, Text, ImageBackground, StyleSheet, Image, Pressable, View } from "react-native";
 import Splash from '../../assets/imgs/spalsh.png';
 import comonStyles from "../comonStyles";
-import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 export default props => {
     return (
@@ -15,13 +13,8 @@ export default props => {
                 </View>
 
                 <View style={Style.btn}>
-<<<<<<< HEAD
-                    <Pressable onPress={() => props.navigation.navigate('Criar')} >
+                    <Pressable onPress={() => props.navigation.navigate('perfil')} >
                         <Text style={Style.txt}>Continua</Text>
-=======
-                    <Pressable onPress={() => props.navigation.navigate('InicialLogin')} >
-                        <Text style={Style.txt}>Continuar</Text>
->>>>>>> e21d12aa8c6785f7184089cac4dc7f8e781d377b
                     </Pressable>
                 </View>
 
