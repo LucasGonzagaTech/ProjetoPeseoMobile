@@ -11,13 +11,7 @@ export default props => {
         <SafeAreaView style={{flex:1}}>
             <NavigationContainer>
                 <Stack.Navigator initialRouteName='Splash'>
-                    <Stack.Screen name="Splash" component={Splash}
-                    options={
-                        {
-                            headerShown: false
-                        }
-                    }
-                    />
+                    <Stack.Screen name="Splash" component={Splash}options={{headerShown: false}}/>
                     <Stack.Screen name="Criar" component={CriarConta}
                     options={
                         {
