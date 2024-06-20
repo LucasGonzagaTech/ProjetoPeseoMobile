@@ -20,7 +20,7 @@ export default props => {
                     </Pressable>
                 </View>
 
-                <Pressable style={Style.botao} >
+                <Pressable style={Style.botao} onPress={() => props.navigation.navigate('Cadastro')} >
                      <Text style={Style.txt} >Criar Conta</Text>
                 </Pressable>
             </ImageBackground>
