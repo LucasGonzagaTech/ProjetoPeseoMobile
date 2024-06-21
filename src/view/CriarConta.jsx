@@ -87,7 +87,10 @@ export default props => {
                         <Icon name="logo-google" size={18} color="#5A19FF" />
                         <Text style={styles.buttonTextGoogle}>Google</Text>
                     </Pressable>
-                    <Text> Já tem conta? Entrar </Text>
+
+                    <Pressable onPress={() => props.navigation.navigate('Login')} >
+                    <Text > Já tem conta? Entrar </Text>
+                    </Pressable>
                 </View>
             </SafeAreaView>
         );
