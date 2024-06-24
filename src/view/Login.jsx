@@ -4,7 +4,7 @@ import {TextInput } from "react-native-paper";
 import comonStyles from "../comonStyles";
 import logo from '../../assets/imgs/logoRight.png';
 import Icon from "react-native-vector-icons/Ionicons";
-//d 
+//ds
 export default props => {
     const [email, setEmail] = React.useState('');
     const [password, setPassword] = React.useState('');
