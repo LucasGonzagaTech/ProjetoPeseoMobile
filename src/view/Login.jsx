@@ -58,7 +58,7 @@ export default props => {
                         onPress={() => setShowPassword(!showPassword)} 
                     />
                    
-                   <Text onPress={() => props.navigation.navigate('Recuperar Senha')} >Esqueci minha senha</Text>
+                   <Text onPress={() => props.navigation.navigate('Definir Senha')} >Esqueci minha senha</Text>
 
                 </View>
                 <View style={styles.buttonContainer}>
@@ -75,11 +75,11 @@ export default props => {
                     >
                     <Text style={styles.buttonText}>Entrar</Text>
                     </Pressable>
-                    <Text> ou entre </Text>
+                    {/* <Text> ou entre </Text>
                     <Pressable style={styles.buttonGoogle}>
                         <Icon name="logo-google" size={18} color="#5A19FF" />
                         <Text style={styles.buttonTextGoogle}>Google</Text>
-                    </Pressable>
+                    </Pressable> */}
 
                     <Pressable onPress={() => props.navigation.navigate('Cadastro')}>
                     <Text> Não tem uma conta? <Text style={styles.txtEntrar} >Criar conta</Text></Text>

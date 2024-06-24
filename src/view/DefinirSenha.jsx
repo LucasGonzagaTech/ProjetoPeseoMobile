@@ -35,10 +35,17 @@ export default props => {
 
                 <View style={styles.content}>
                     <InputField 
-                        label="Senha *" 
-                        placeholder="Digite sua nova senha" 
+                        label="Atual Senha *" 
+                        placeholder="Digite sua senha atual" 
                         value={senha} 
                         onChangeText={setSenha} 
+                        secureTextEntry={!showPassword}
+                        icon={showPassword ? "eye" : "eye-off"} 
+                       
+                    />
+                        <InputField 
+                        label="Nova Senha *" 
+                        placeholder="Digite sua nova senha" 
                         secureTextEntry={!showPassword}
                         icon={showPassword ? "eye" : "eye-off"} 
                        
