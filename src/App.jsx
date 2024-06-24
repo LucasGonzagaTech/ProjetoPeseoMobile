@@ -12,39 +12,25 @@ import CriarConta from './view/CriarConta';
 import TabNavigator from './Stack/TabNavigator';
 import Perfil from './view/Perfil';
 
+import DefinirSenha from './view/DefinirSenha';
+import Perfil from './view/Perfil';
 
 const Stack = createNativeStackNavigator();
 const  Tab = createBottomTabNavigator ();
 
 export default props => {
-  return (
-    <SafeAreaView style={{ flex: 1 }}>
-      <NavigationContainer>
-        <Stack.Navigator initialRouteName='Criar'>
-
-          {/* Paginas com Stack */}
-          <Stack.Screen name='Splash' component={Splash} options={{ headerShown: false }} />
-          <Stack.Screen name='InicialLogin' component={InicialLogin} options={{ headerShown: false }} />
-          <Stack.Screen name='Login' component={Login} options={{ headerTitleAlign: 'center' }} />
-          <Stack.Screen name="Criar" component={CriarConta}
-            options={{
-              headerTitleAlign: 'center',
-              headerStyle: {
-                backgroundColor: '#f2f2f2',
-                paddingHorizontal: 16,
-                paddingVertical: 16,
-              },
-            }}
-          />
-
-
-          {/* Pagina com TabNavigation */}
-          <Stack.Screen name='perfil' component={Perfil} options={{ headerTitleAlign: 'center' }} />
-
-          {/* Tab navigation */}
-          <Stack.Screen name="Tabs" component={TabNavigator} />
-        </Stack.Navigator>
-      </NavigationContainer>
-    </SafeAreaView>
-  );
+    return (
+        <SafeAreaView style={{ flex: 1 }}>
+            <NavigationContainer>
+                <Stack.Navigator initialRouteName='Perfil' >
+                    <Stack.Screen name='Splash' component={Splash} options={{ headerShown: false, }} />
+                    <Stack.Screen name='InicialLogin' component={InicialLogin} options={{ headerShown: false, }} />
+                    <Stack.Screen name='Login' component={Login} />
+                    <Stack.Screen name='Cadastro' component={CriarConta} />
+                    <Stack.Screen name='Definir Senha' component={DefinirSenha} />
+                    <Stack.Screen name='Perfil' component={Perfil} />
+                </Stack.Navigator>
+            </NavigationContainer>
+        </SafeAreaView>
+    )
 }

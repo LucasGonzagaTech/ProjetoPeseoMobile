@@ -1,38 +1,30 @@
 import React from "react";
-import { StyleSheet, SafeAreaView, Text, Image, View, Pressable, StatusBar, KeyboardAvoidingView } from "react-native";
+import { StyleSheet, SafeAreaView, Text, Image, View, Pressable, StatusBar} from "react-native";
 import {TextInput } from "react-native-paper";
 import comonStyles from "../comonStyles";
 import logo from '../../assets/imgs/logoRight.png';
 import Icon from "react-native-vector-icons/Ionicons";
 
 export default props => {
-    const [email, setEmail] = React.useState('');
+    const [senha, setSenha] = React.useState('');
     const [password, setPassword] = React.useState('');
+    const [aviso,setAviso] = React.useState('')
    
 
     const [error, setError] = React.useState('');
     const [showPassword, setShowPassword] = React.useState(false);
 
+ 
     
-        const validatePassword = () => {
-            if (password !== confirmPassword) {
-                setError('As senhas não coincidem.');
-                return false;
-            }
-            setError('');
-            return true;
-        };
-    
-        const handleSignUp = () => {
-            if (validatePassword()) {
-                //ligação com api
-                console.log('Conta criada com sucesso!');
-            }
-        };
     
         const areInputsFilled = () => {
-            return email.trim() !== '' && password.trim() !== '' ;
+            return senha.trim() !== '' && password.trim() !== '' ;
         };
+
+        // function aviso (){
+        //     setAviso('Senha alterada com sucesso')
+            
+        // }
     
         return (
             <SafeAreaView style={styles.container}>
@@ -43,22 +35,31 @@ export default props => {
 
                 <View style={styles.content}>
                     <InputField 
-                        label="E-mail *" 
-                        placeholder="Digite seu email" 
-                        value={email} 
-                        onChangeText={setEmail} 
+                        label="Atual Senha *" 
+                        placeholder="Digite sua senha atual" 
+                        value={senha} 
+                        onChangeText={setSenha} 
+                        secureTextEntry={!showPassword}
+                        icon={showPassword ? "eye" : "eye-off"} 
+                       
+                    />
+                        <InputField 
+                        label="Nova Senha *" 
+                        placeholder="Digite sua nova senha" 
+                        secureTextEntry={!showPassword}
+                        icon={showPassword ? "eye" : "eye-off"} 
+                       
                     />
                     <InputField 
-                        label="Senha *" 
-                        placeholder="Digite sua senha" 
+                        label="Confirmar Senha*" 
+                        placeholder="Confirme sua nova senha" 
                         value={password} 
                         onChangeText={setPassword} 
                         secureTextEntry={!showPassword}
                         icon={showPassword ? "eye" : "eye-off"} 
-                        onPress={() => setShowPassword(!showPassword)} 
+                       
                     />
                    
-                   <Text onPress={() => props.navigation.navigate('Definir Senha')} >Esqueci minha senha</Text>
 
                 </View>
                 <View style={styles.buttonContainer}>
@@ -70,20 +71,12 @@ export default props => {
                             },
                             styles.button
                         ]}
-                        onPress={() => props.navigation.navigate('Perfil')}
+                         
                         disabled={!areInputsFilled()}
                     >
-                    <Text style={styles.buttonText}>Entrar</Text>
+                        <Text style={styles.buttonText}>Voltar</Text>
                     </Pressable>
-                    {/* <Text> ou entre </Text>
-                    <Pressable style={styles.buttonGoogle}>
-                        <Icon name="logo-google" size={18} color="#5A19FF" />
-                        <Text style={styles.buttonTextGoogle}>Google</Text>
-                    </Pressable> */}
-
-                    <Pressable onPress={() => props.navigation.navigate('Cadastro')}>
-                    <Text> Não tem uma conta? <Text style={styles.txtEntrar} >Criar conta</Text></Text>
-                    </Pressable>
+                    
                 </View>
             </SafeAreaView>
         );
@@ -138,7 +131,7 @@ export default props => {
             marginTop: 8,
         },
         buttonContainer: {
-            flex: 2,
+            flex: 1,
             gap: 4,
             alignItems: "center"
         },
