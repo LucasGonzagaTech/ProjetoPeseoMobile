@@ -2,6 +2,8 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
 import { SafeAreaView } from 'react-native';
 import Splash from './view/Splash';
 import InicialLogin from './view/InicialLogin';
@@ -12,16 +14,18 @@ import Perfil from './view/Perfil';
 
 
 const Stack = createNativeStackNavigator();
+const  Tab = createBottomTabNavigator ();
 
 export default props => {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <NavigationContainer>
-        <Stack.Navigator initialRouteName='Splash'>
+        <Stack.Navigator initialRouteName='Criar'>
+
+          {/* Paginas com Stack */}
           <Stack.Screen name='Splash' component={Splash} options={{ headerShown: false }} />
           <Stack.Screen name='InicialLogin' component={InicialLogin} options={{ headerShown: false }} />
           <Stack.Screen name='Login' component={Login} options={{ headerTitleAlign: 'center' }} />
-          <Stack.Screen name='perfil' component={Perfil} options={{ headerTitleAlign: 'center' }} />
           <Stack.Screen name="Criar" component={CriarConta}
             options={{
               headerTitleAlign: 'center',
@@ -32,7 +36,13 @@ export default props => {
               },
             }}
           />
-          <Stack.Screen name="Tabs" component={TabNavigator} options={{ headerShown: false }} />
+
+
+          {/* Pagina com TabNavigation */}
+          <Stack.Screen name='perfil' component={Perfil} options={{ headerTitleAlign: 'center' }} />
+
+          {/* Tab navigation */}
+          <Stack.Screen name="Tabs" component={TabNavigator} />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaView>

@@ -6,7 +6,9 @@ import logo from '../../assets/imgs/logoRight.png';
 import Icon from "react-native-vector-icons/Ionicons";
 
 export default props => {
+    const [name, setName] = React.useState('');
     const [email, setEmail] = React.useState('');
+    const [tel, setTel] = React.useState('');
     const [password, setPassword] = React.useState('');
     const [confirmPassword, setConfirmPassword] = React.useState('');
 
@@ -31,7 +33,7 @@ export default props => {
         };
     
         const areInputsFilled = () => {
-            return email.trim() !== '' && password.trim() !== '' && confirmPassword.trim() !== '';
+            return name.trim() !=='' && email.trim() !== '' && tel.trim() !=='' && password.trim() !== '' && confirmPassword.trim() !== '';
         };
     
         return (
@@ -43,10 +45,22 @@ export default props => {
 
                 <View style={styles.content}>
                     <InputField 
+                        label="Nome *" 
+                        placeholder="Digite seu nome completo" 
+                        value={name} 
+                        onChangeText={setName} 
+                    />
+                    <InputField 
                         label="E-mail *" 
                         placeholder="Digite seu email" 
                         value={email} 
                         onChangeText={setEmail} 
+                    />
+                    <InputField 
+                        label="Telefone *" 
+                        placeholder="Digite seu telefone" 
+                        value={tel} 
+                        onChangeText={setTel} 
                     />
                     <InputField 
                         label="Senha *" 
@@ -82,11 +96,11 @@ export default props => {
                     >
                         <Text style={styles.buttonText}>Criar Conta</Text>
                     </Pressable>
-                    <Text> ou entre </Text>
+                    {/* <Text> ou entre </Text>
                     <Pressable style={styles.buttonGoogle}>
                         <Icon name="logo-google" size={18} color="#5A19FF" />
                         <Text style={styles.buttonTextGoogle}>Google</Text>
-                    </Pressable>
+                    </Pressable> */}
                     <Text> Já tem conta? Entrar </Text>
                 </View>
             </SafeAreaView>
@@ -119,14 +133,14 @@ export default props => {
             alignItems: "center"
         },
         content: {
-            flex: 5,
+            flex: 7,
             justifyContent: "flex-start",
             alignItems: "center",
-            gap: 24
+            gap: 18
         },
         contentInput: {
             width: '100%',
-            gap: 8
+            gap: 4
         },
         input: {
             borderWidth: 1,
@@ -142,7 +156,7 @@ export default props => {
             marginTop: 8,
         },
         buttonContainer: {
-            flex: 2,
+            flex: 1,
             gap: 4,
             alignItems: "center"
         },

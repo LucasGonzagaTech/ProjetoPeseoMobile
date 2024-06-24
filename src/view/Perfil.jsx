@@ -3,7 +3,7 @@ import { View, Text } from "react-native";
 
 export default props => {
     return(
-        <View>
+        <View style={{flex: 1}}>
             <Text>Olá</Text>            
         </View>
     )

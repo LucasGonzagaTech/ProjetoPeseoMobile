@@ -9,6 +9,8 @@ const TabNavigator = () => {
   return (
     <Tab.Navigator>
       <Tab.Screen name="Perfil" component={Perfil} />
+      <Tab.Screen name="Perfil" component={Perfil} />
+      <Tab.Screen name="Perfil" component={Perfil} />
     </Tab.Navigator>
   );
 };
