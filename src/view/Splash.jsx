@@ -13,7 +13,7 @@ export default props => {
                 </View>
 
                 <View style={Style.btn}>
-                    <Pressable onPress={() => props.navigation.navigate('perfil')} >
+                    <Pressable onPress={() => props.navigation.navigate('Home')} >
                         <Text style={Style.txt}>Continua</Text>
                     </Pressable>
                 </View>
