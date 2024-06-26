@@ -10,7 +10,6 @@ import InicialLogin from './view/InicialLogin';
 import Login from './view/Login';
 import CriarConta from './view/CriarConta';
 import TabNavigator from './Stack/TabNavigator';
-import Perfil from './view/Perfil';
 
 import DefinirSenha from './view/DefinirSenha';
 import Perfil from './view/Perfil';
@@ -22,7 +21,7 @@ export default props => {
     return (
         <SafeAreaView style={{ flex: 1 }}>
             <NavigationContainer>
-                <Stack.Navigator initialRouteName='Perfil' >
+                <Stack.Navigator initialRouteName='Cadastro' >
                     <Stack.Screen name='Splash' component={Splash} options={{ headerShown: false, }} />
                     <Stack.Screen name='InicialLogin' component={InicialLogin} options={{ headerShown: false, }} />
                     <Stack.Screen name='Login' component={Login} />

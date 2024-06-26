@@ -18,11 +18,11 @@ router.post('/', async (req, res) =>{
     const hash = await bcrypt.hash(senha, 10);
     const query = 'INSERT INTO tbusuarios (idUsuario, nome, email, tel, senha) VALUES (?,?,?,?,?)';
 
-    dbConecta.query( query, [idUsuario, nome, email, tel, hash], (err, result) =>{
-        if(err) {
-            res.status(500).json({message: 'Erro ao adicionar usuário.'});
-
-        }else {
+    dbConecta.query(query, [idUsuario, nome, email, tel, hash], (err, result) => {
+        if (err) {
+            console.error('Erro ao adicionar usuário:', err);
+            res.status(500).json({ message: 'Erro ao adicionar usuário.' });
+        } else {
             res.status(201).json({
                 message: 'Usuario adicionado!',
                 idUsuario: result.insertId,

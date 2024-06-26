@@ -27,8 +27,30 @@ export default props => {
     
         const handleSignUp = () => {
             if (validatePassword()) {
-                //ligação com api
-                console.log('Conta criada com sucesso!');
+                const user = {
+                    nome: name,
+                    email: email,
+                    tel: tel,
+                    senha: password,
+                };
+
+                console.log(user); 
+
+
+                fetch('http://10.23.44.41:3000/usuarios', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(user)
+                })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Conta criada com sucesso!', data);
+                })
+                .catch(error => {
+                    console.error('Erro ao criar conta:', error);
+                });
             }
         };
     
@@ -91,6 +113,7 @@ export default props => {
                             },
                             styles.button
                         ]}
+
                         onPress={handleSignUp}
                         disabled={!areInputsFilled()}
                     >
