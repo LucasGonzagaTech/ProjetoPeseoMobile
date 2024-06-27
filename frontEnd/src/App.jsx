@@ -10,9 +10,10 @@ import InicialLogin from './view/InicialLogin';
 import Login from './view/Login';
 import CriarConta from './view/CriarConta';
 import TabNavigator from './Stack/TabNavigator';
+import Perfil from './view/Perfil';
 
 import DefinirSenha from './view/DefinirSenha';
-import Perfil from './view/Perfil';
+import AlterarNome from './view/AlterarNome';
 
 const Stack = createNativeStackNavigator();
 const  Tab = createBottomTabNavigator ();
@@ -21,13 +22,14 @@ export default props => {
     return (
         <SafeAreaView style={{ flex: 1 }}>
             <NavigationContainer>
-                <Stack.Navigator initialRouteName='Cadastro' >
+                <Stack.Navigator initialRouteName='Splash' >
                     <Stack.Screen name='Splash' component={Splash} options={{ headerShown: false, }} />
                     <Stack.Screen name='InicialLogin' component={InicialLogin} options={{ headerShown: false, }} />
                     <Stack.Screen name='Login' component={Login} />
                     <Stack.Screen name='Cadastro' component={CriarConta} />
                     <Stack.Screen name='Definir Senha' component={DefinirSenha} />
                     <Stack.Screen name='Perfil' component={Perfil} />
+                    <Stack.Screen name='Nome' component={AlterarNome}/>
                 </Stack.Navigator>
             </NavigationContainer>
         </SafeAreaView>

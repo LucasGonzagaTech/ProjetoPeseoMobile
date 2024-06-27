@@ -3,13 +3,14 @@ import { StyleSheet, SafeAreaView, Text, Image, View, Pressable, StatusBar } fro
 import Avatar from '../../assets/imgs/Avatar.png'
 import comonStyles from "../comonStyles";
 import Icon from "react-native-vector-icons/AntDesign";
+import FotoPerfil from '../../assets/imgs/fotoperfil.png'
 
 export default props => {
     return (
         <SafeAreaView style={styles.container} >
 
             <View style={styles.img} >
-                <Image source={Avatar} />
+                <Image source={FotoPerfil} />
                 <Text style={styles.name} >Nami</Text>
             </View>
 
@@ -98,12 +99,12 @@ const styles = StyleSheet.create(
             flexDirection: `row`,
         },
         icone: {
-            marginLeft: 300,
+            marginLeft: "70%",
             margin: 2,
 
         },
         iconmail: {
-            marginLeft: 250,
+            marginLeft: "57%",
             margin: 2
         },
         txt: {
@@ -118,7 +119,7 @@ const styles = StyleSheet.create(
             margin: 8
         },
         iconSair: {
-            marginLeft: 210,
+            marginLeft: "48%",
             margin: 2
         },
         txtInfo: {
