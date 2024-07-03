@@ -5,7 +5,7 @@ import comonStyles from "../comonStyles";
 
 export default props => {
     return (
-        <SafeAreaView style={Style.container} >
+        <View style={Style.container} >
             <ImageBackground source={pgLogin} style={Style.img} >
 
                 <View style={Style.margintxt} >
@@ -24,7 +24,7 @@ export default props => {
                      <Text style={Style.txt} >Criar Conta</Text>
                 </Pressable>
             </ImageBackground>
-        </SafeAreaView>
+        </View>
     )
 }
 

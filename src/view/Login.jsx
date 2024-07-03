@@ -4,7 +4,7 @@ import {TextInput } from "react-native-paper";
 import comonStyles from "../comonStyles";
 import logo from '../../assets/imgs/logoRight.png';
 import Icon from "react-native-vector-icons/Ionicons";
-//ds
+
 export default props => {
     const [email, setEmail] = React.useState('');
     const [password, setPassword] = React.useState('');
@@ -34,7 +34,7 @@ export default props => {
         };
     
         return (
-            <SafeAreaView style={styles.container}>
+            <View style={styles.container}>
                 <StatusBar barStyle="dark-content" backgroundColor="#f2f2f2" />
                 <View style={styles.image}>
                     <Image source={logo} />
@@ -69,7 +69,7 @@ export default props => {
                             },
                             styles.button
                         ]}
-                        onPress={() => props.navigation.navigate('Perfil')}
+                        onPress={() => props.navigation.navigate('Tab')}
                         disabled={!areInputsFilled()}
                     >
                     <Text style={styles.buttonText}>Entrar</Text>
@@ -80,11 +80,11 @@ export default props => {
                         <Text style={styles.buttonTextGoogle}>Google</Text>
                     </Pressable> */}
 
-                    <Pressable onPress={() => props.navigation.navigate('Cadastro')}>
+                    <Pressable onPress={() => props.navigation.navigate('CreateAcconut')}>
                     <Text> Não tem uma conta? <Text style={styles.txtEntrar} >Criar conta</Text></Text>
                     </Pressable>
                 </View>
-            </SafeAreaView>
+            </View>
         );
     };
     

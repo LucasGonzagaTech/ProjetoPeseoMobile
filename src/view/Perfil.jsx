@@ -61,8 +61,6 @@ const styles = StyleSheet.create(
         name: {
             color: '#242424',
             fontSize:24,
-            fontWeighteight: 600,
-
         },
         border: {
             borderBottomColor: '#B6BBC4',
