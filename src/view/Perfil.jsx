@@ -1,65 +1,46 @@
 import React from "react";
 import { StyleSheet, SafeAreaView, Text, Image, View, Pressable, StatusBar } from "react-native";
-import Avatar from '../../assets/imgs/Avatar.png'
+import Avatar from '../../assets/imgs/Avatar.jpg'
 import comonStyles from "../comonStyles";
 import Icon from "react-native-vector-icons/AntDesign";
-import FotoPerfil from '../../assets/imgs/fotoperfil.png'
 
 export default props => {
     return (
-        <SafeAreaView style={styles.container} >
+        <View style={styles.container} >
 
             <View style={styles.img} >
-                <Image source={FotoPerfil} />
-                <Text style={styles.name} >Nami</Text>
+                <Image source={Avatar} />
+                <Text style={styles.name} >Usuário</Text>
             </View>
 
             <Text style={styles.txtInfo}>Minhas informações</Text>
 
-            <View style={styles.border}>
+            <View style={styles.icon}>
+                <View>
+                    <Text style={styles.TitleText}>Nome</Text>
+                    <Text style={styles.txtpqn}>Usuário</Text>
+                </View>
+                <Icon style={styles.icone} name="right" color="black" size={16} />
             </View>
-
 
             <View style={styles.icon}>
                 <View>
-                    <Text style={styles.txtName}>Nome</Text>
-                    <Text style={styles.txtpqn}>Nami</Text>
+                    <Text style={styles.TitleText}>E-mail</Text>
+                    <Text style={styles.txtpqn}>usuario@gmail.com</Text>
                 </View>
-                <Icon style={styles.icone} name="right" color="black" size={25} />
+                <Icon style={styles.iconmail} name="right" color="black" size={16} />
             </View>
 
-            <View style={styles.border}>
-            </View>
-
-
-            <View style={styles.icon}>
-                <View>
-                    <Text style={styles.txtName}>E-mail</Text>
-                    <Text style={styles.txtpqn}>email@gmail.com</Text>
-                </View>
-                <Icon style={styles.iconmail} name="right" color="black" size={25} />
-            </View>
-
-            <View style={styles.border}>
-            </View>
-
-
-            <Text style={styles.txt} >Opções do aplicativo</Text>
-
-            <View style={styles.border}>
-            </View>
+            <Text style={styles.txtInfo} >Opções do aplicativo</Text>
 
             <View style={styles.icon}>
                 <View>
                     <Text style={styles.txtSair}>Sair do aplicativo</Text>
                 </View>
-                <Icon style={styles.iconSair} name="right" color="black" size={25} />
+                <Icon style={styles.iconSair} name="right" color="black" size={16} />
             </View>
 
-
-
-
-        </SafeAreaView>
+        </View>
     )
 }
 
@@ -67,18 +48,21 @@ const styles = StyleSheet.create(
     {
         container: {
             flex: 1,
-            padding: 16
+            backgroundColor: '#ffffff'
         },
         img: {
+            gap:5,
+            paddingVertical:16,
             marginTop: 42,
-            alignItems: "center"
+            alignItems: "center",
+            borderBottomWidth:1,
+            borderColor: '#F4F4F4'
         },
         name: {
-            fontSize: 25,
             color: '#242424',
-            alignItems: 'center',
-            margin: 15,
-            marginLeft: 1,
+            fontSize:24,
+            fontWeighteight: 600,
+
         },
         border: {
             borderBottomColor: '#B6BBC4',
@@ -91,21 +75,22 @@ const styles = StyleSheet.create(
             fontSize: 20,
             margin: 5
         },
+        TitleText: {
+            color: '#242424',
+            fontSize: 14,
+            fontWeight:"bold"
+        },
         txtpqn: {
             marginLeft: 5
         },
         icon: {
+            borderBottomWidth:1,
+            borderColor: '#F4F4F4',
+            paddingVertical:16,
             alignItems: 'center',
             flexDirection: `row`,
-        },
-        icone: {
-            marginLeft: "70%",
-            margin: 2,
-
-        },
-        iconmail: {
-            marginLeft: "57%",
-            margin: 2
+            paddingHorizontal:16,
+            justifyContent: 'space-between'
         },
         txt: {
             color: '#2E2B33',
@@ -113,17 +98,17 @@ const styles = StyleSheet.create(
             margin:10
         },
         txtSair: {
-            fontSize: 18,
+            fontSize: 16,
             color: "#5A5364",
-            marginBottom: 15,
-            margin: 8
-        },
-        iconSair: {
-            marginLeft: "48%",
-            margin: 2
+            paddingVertical:16,
+            fontWeight:"bold",
         },
         txtInfo: {
-            fontSize: 18,
+            borderBottomWidth:1,
+            borderColor: '#F4F4F4',
+            paddingVertical:16,
+            paddingHorizontal:16,
+            fontSize: 16,
             color: '#2E2B33'
         }
 
