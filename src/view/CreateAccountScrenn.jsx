@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, SafeAreaView, Text, Image, View, Pressable, StatusBar, KeyboardAvoidingView } from "react-native";
+import { StyleSheet, Text, Image, View, Pressable, StatusBar, KeyboardAvoidingView } from "react-native";
 import {TextInput } from "react-native-paper";
 import comonStyles from "../comonStyles";
 import logo from '../../assets/imgs/logoRight.png';
@@ -24,42 +24,18 @@ export default props => {
             setError('');
             return true;
         };
-    
         const handleSignUp = () => {
             if (validatePassword()) {
-                const user = {
-                    nome: name,
-                    email: email,
-                    tel: tel,
-                    senha: password,
-                };
-
-                console.log(user); 
-
-
-                fetch('http://10.23.44.41:3000/usuarios', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(user)
-                })
-                .then(response => response.json())
-                .then(data => {
-                    console.log('Conta criada com sucesso!', data);
-                })
-                .catch(error => {
-                    console.error('Erro ao criar conta:', error);
-                });
+                //ligação com api
+                console.log('Conta criada com sucesso!');
             }
         };
-    
         const areInputsFilled = () => {
             return name.trim() !=='' && email.trim() !== '' && tel.trim() !=='' && password.trim() !== '' && confirmPassword.trim() !== '';
         };
     
         return (
-            <SafeAreaView style={styles.container}>
+            <View style={styles.container}>
                 <StatusBar barStyle="dark-content" backgroundColor="#f2f2f2" />
                 <View style={styles.image}>
                     <Image source={logo} />
@@ -102,6 +78,7 @@ export default props => {
                         icon={showConfirmPassword ? "eye" : "eye-off"} 
                         onPress={() => setShowConfirmPassword(!showConfirmPassword)} 
                     />
+                    
                     {error ? <Text style={styles.error}>{error}</Text> : null}
                 </View>
                 <View style={styles.buttonContainer}>
@@ -113,7 +90,6 @@ export default props => {
                             },
                             styles.button
                         ]}
-
                         onPress={handleSignUp}
                         disabled={!areInputsFilled()}
                     >
@@ -126,7 +102,7 @@ export default props => {
                     </Pressable> */}
                     <Text> Já tem conta? Entrar </Text>
                 </View>
-            </SafeAreaView>
+            </View>
         );
     };
     
